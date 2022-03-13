@@ -37,7 +37,7 @@ class MyHomePage extends StatelessWidget {
       child: ColoredBox(
         color: Colors.black38,
         child: SizedBox.square(
-          dimension: 50,
+          dimension: 60,
           child: WinLoading(),
         ),
       ),
