@@ -5,4 +5,4 @@
 
 [![publish](https://github.com/ZuYun/winloading/actions/workflows/publish.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/publish.yml)
 
-[https://img.shields.io/badge/online-test-green](https://zuyun.github.io/winloading/#/)
+[![online](https://img.shields.io/badge/online-test-green)](https://zuyun.github.io/winloading/#/)
