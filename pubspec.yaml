@@ -1,7 +1,7 @@
 name: winloading
 description: win10 style loading animation widget
 version: 0.0.1
-homepage:
+homepage: https://github.com/ZuYun/winloading
 
 environment:
   sdk: ">=2.16.1 <3.0.0"
