@@ -34,7 +34,6 @@ jobs:
         uses: sakebook/actions-flutter-pub-publisher@v1.3.1
         with:
           credential: ${{ secrets.dev_secret }}
-          flutter_package: true
           skip_test: true
           dry_run: false
       - run: echo "✨ ⭐ 🌟 publish Dart/Flutter package success . 🚀"
