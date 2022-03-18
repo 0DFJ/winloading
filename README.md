@@ -1,13 +1,7 @@
 
-[![flib build](https://github.com/ZuYun/winloading/actions/workflows/flibbuild.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/flibbuild.yml)
+[![flib build](https://github.com/ZuYun/winloading/actions/workflows/flibbuild.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/flibbuild.yml) [![lib web](https://github.com/ZuYun/winloading/actions/workflows/flibweb.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/flibweb.yml)    [![publish](https://github.com/ZuYun/winloading/actions/workflows/publish.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/publish.yml)
 
-[![lib web](https://github.com/ZuYun/winloading/actions/workflows/flibweb.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/flibweb.yml)
-
-[![publish](https://github.com/ZuYun/winloading/actions/workflows/publish.yml/badge.svg)](https://github.com/ZuYun/winloading/actions/workflows/publish.yml)
-
-
-
-## what is it
+# what is it
 
 [![online](https://img.shields.io/badge/online-test-green)](https://zuyun.github.io/winloading/#/)
 
@@ -17,7 +11,7 @@ https://user-images.githubusercontent.com/9412501/159002380-329fb171-c993-4373-b
 
 https://user-images.githubusercontent.com/9412501/159002392-f00afe4a-dcb9-4081-bc52-417f4f2b281d.mp4
 
-## how to use
+# how to use
 
 ```dart
       Center(
@@ -25,7 +19,7 @@ https://user-images.githubusercontent.com/9412501/159002392-f00afe4a-dcb9-4081-b
       )
 
 ```
-#### customization
+### customization
 
 ```dart
 
