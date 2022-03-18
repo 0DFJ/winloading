@@ -12,10 +12,9 @@ https://user-images.githubusercontent.com/9412501/159002392-f00afe4a-dcb9-4081-b
 # how to use
 [![pub](https://img.shields.io/badge/pub-v0.0.2-green)](https://pub.dev/packages/winloading)
 ```dart
-      Center(
-        child: View3D.me(),
-      )
-
+Center(
+  child: View3D.me(),
+)
 ```
 ## customization
 
