@@ -36,10 +36,7 @@ class MyHomePage extends StatelessWidget {
     return const Center(
       child: ColoredBox(
         color: Colors.black38,
-        child: SizedBox.square(
-          dimension: 60,
-          child: WinLoading(),
-        ),
+        child: WinLoading(),
       ),
     );
   }

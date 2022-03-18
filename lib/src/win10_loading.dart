@@ -12,6 +12,8 @@ class WinLoading extends StatefulWidget {
   final double radius;
   final double gap;
   final double amount;
+  final double width;
+  final double height;
   final Duration duration;
 
   const WinLoading({
@@ -19,6 +21,8 @@ class WinLoading extends StatefulWidget {
     this.radius = 3,
     this.gap = 0.04,
     this.amount = 5,
+    this.width = 60,
+    this.height = 60,
     this.duration = const Duration(milliseconds: 7200),
     Key? key,
   }) : super(key: key);
@@ -45,19 +49,23 @@ class _WinLoadingState extends State<WinLoading> with SingleTickerProviderStateM
 
   @override
   Widget build(BuildContext context) {
-    return AnimatedBuilder(
-      animation: _animationControl,
-      builder: (BuildContext context, Widget? child) {
-        return CustomPaint(
-          painter: _WinLoadingPainter(
-            _animationControl.value,
-            widget.color,
-            widget.radius,
-            widget.gap,
-            widget.amount,
-          ),
-        );
-      },
+    return SizedBox(
+      width: widget.width,
+      height: widget.height,
+      child: AnimatedBuilder(
+        animation: _animationControl,
+        builder: (BuildContext context, Widget? child) {
+          return CustomPaint(
+            painter: _WinLoadingPainter(
+              _animationControl.value,
+              widget.color,
+              widget.radius,
+              widget.gap,
+              widget.amount,
+            ),
+          );
+        },
+      ),
     );
   }
 }
@@ -129,7 +137,7 @@ class _WinLoadingPainter extends CustomPainter {
     }
 
     // 从底部开始 默认0度 在右边
-    double angle = pi / 2 + aniAngle;
+    double angle = pi / 3.3 + aniAngle;
 
     double minSide = min(size.width, size.height);
     double locusRadius = minSide / 2 - radius;
