@@ -6,3 +6,7 @@
 
 * Just experience it
 
+## 0.0.3
+
+* expose cubic
+

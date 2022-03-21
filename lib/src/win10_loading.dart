@@ -15,6 +15,7 @@ class WinLoading extends StatefulWidget {
   final double width;
   final double height;
   final Duration duration;
+  final Cubic cubic;
 
   const WinLoading({
     this.color = Colors.white,
@@ -23,7 +24,8 @@ class WinLoading extends StatefulWidget {
     this.amount = 5,
     this.width = 60,
     this.height = 60,
-    this.duration = const Duration(milliseconds: 7200),
+    this.duration = const Duration(milliseconds: 5200),
+    this.cubic = const Cubic(.21, .6, .59, .8),
     Key? key,
   }) : super(key: key);
 
@@ -31,13 +33,15 @@ class WinLoading extends StatefulWidget {
   State<WinLoading> createState() => _WinLoadingState();
 }
 
-class _WinLoadingState extends State<WinLoading> with SingleTickerProviderStateMixin {
+class _WinLoadingState extends State<WinLoading>
+    with SingleTickerProviderStateMixin {
   late AnimationController _animationControl;
 
   @override
   void initState() {
     super.initState();
-    _animationControl = AnimationController(vsync: this, duration: widget.duration);
+    _animationControl =
+        AnimationController(vsync: this, duration: widget.duration);
     _animationControl.repeat();
   }
 
@@ -62,6 +66,7 @@ class _WinLoadingState extends State<WinLoading> with SingleTickerProviderStateM
               widget.radius,
               widget.gap,
               widget.amount,
+              widget.cubic,
             ),
           );
         },
@@ -77,27 +82,29 @@ class _WinLoadingPainter extends CustomPainter {
   final double amount;
   final Color color;
   final Paint _paint = Paint();
+  final Cubic cubic;
   final List<Interval> winIntervals = [];
 
   _WinLoadingPainter(
-      this.progress,
-      this.color,
-      this.radius,
-      this.gap,
-      this.amount,
-      ) {
+    this.progress,
+    this.color,
+    this.radius,
+    this.gap,
+    this.amount,
+    this.cubic,
+  ) {
     _paint
       ..color = color
       ..style = PaintingStyle.fill;
 
-    // Cubic cubic1 = Cubic(.1,.54,.61,.86);
-    // Cubic cubic2 = Cubic(.39,.14,.9,.46);
     /// https://cubic-bezier.com/#.07,.59,.59,.8
-    Cubic cubic1 = const Cubic(.07, .59, .59, .8);
-    Cubic cubic2 = cubic1.symmetry();
-    winIntervals.add(_CurveAngle(0, 18 / 72.0, curve: cubic1));
+    // Cubic cubic1 = const Cubic(.07, .59, .59, .8);
+    // Cubic cubic1 = const Cubic(.17,.59,.59,.8);
+    // Cubic cubic1 = const Cubic(.21,.6,.59,.8);
+    Cubic cubic2 = cubic.symmetry();
+    winIntervals.add(_CurveAngle(0, 18 / 72.0, curve: cubic));
     winIntervals.add(_CurveAngle(18 / 72.0, 36 / 72.0, curve: cubic2));
-    winIntervals.add(_CurveAngle(36 / 72.0, 54 / 72.0, curve: cubic1));
+    winIntervals.add(_CurveAngle(36 / 72.0, 54 / 72.0, curve: cubic));
     winIntervals.add(_CurveAngle(54 / 72.0, 1, curve: cubic2));
   }
 
@@ -147,7 +154,8 @@ class _WinLoadingPainter extends CustomPainter {
     // path of particle
     /// 圆的轨迹 方程 x,y = R*cos(θ) , R*sin(θ)
     var offset = Offset(locusRadius * cos(angle), locusRadius * sin(angle));
-    canvas.drawCircle(offset.translate(size.width / 2, size.height / 2), radius, _paint);
+    canvas.drawCircle(
+        offset.translate(size.width / 2, size.height / 2), radius, _paint);
   }
 
   @override

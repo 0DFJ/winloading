@@ -1,3 +1,4 @@
+import 'package:flutter/cupertino.dart';
 import 'package:flutter/material.dart';
 import 'package:winloading/winloading.dart';
 
@@ -33,10 +34,41 @@ class MyApp extends StatelessWidget {
 class MyHomePage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
-    return const Center(
-      child: ColoredBox(
-        color: Colors.black38,
-        child: WinLoading(),
+    return Center(
+      child: Column(
+        mainAxisSize: MainAxisSize.min,
+        children: [
+          const ColoredBox(
+            color: Colors.black38,
+            child: const WinLoading(),
+          ),
+          const SizedBox.square(dimension: 10,),
+          const ColoredBox(
+            color: Colors.black38,
+            child: WinLoading(cubic: const Cubic(.07, .59, .59, .8),),
+          ),
+          const SizedBox.square(dimension: 10,),
+          const ColoredBox(
+            color: Colors.black38,
+            child: WinLoading(cubic: const Cubic(.17,.59,.59,.8),),
+          ),
+          const SizedBox.square(dimension: 10,),
+          const ColoredBox(
+            color: Colors.black38,
+            child: WinLoading(cubic: const Cubic(.22,.42,.64,.79),),
+          ),
+          const SizedBox.square(dimension: 10,),
+          const ColoredBox(
+            color: Colors.black38,
+            child: WinLoading(cubic: const Cubic(.22,.42,.44,.71),),
+          ),
+          const SizedBox.square(dimension: 10,),
+          const ColoredBox(
+            color: Colors.black38,
+            child: WinLoading(cubic: const Cubic(.15,.6,.64,.79),),
+          ),
+          const SizedBox.square(dimension: 10,),
+        ],
       ),
     );
   }

@@ -28,6 +28,7 @@ const WinLoading({
     this.width = 60,
     this.height = 60,
     this.duration = const Duration(milliseconds: 7200),
+    this.cubic = const Cubic(.21, .6, .59, .8),
     Key? key,
 })
 
