@@ -10,7 +10,7 @@ https://user-images.githubusercontent.com/9412501/159002380-329fb171-c993-4373-b
 https://user-images.githubusercontent.com/9412501/159002392-f00afe4a-dcb9-4081-bc52-417f4f2b281d.mp4
 
 # how to use
-[![pub](https://img.shields.io/badge/pub-v0.0.2-green)](https://pub.dev/packages/winloading)
+[![pub](https://img.shields.io/badge/pub-v0.0.3-green)](https://pub.dev/packages/winloading)
 ```dart
 Center(
   child: View3D.me(),
